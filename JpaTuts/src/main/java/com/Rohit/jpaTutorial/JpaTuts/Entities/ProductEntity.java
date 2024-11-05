@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 
@@ -27,7 +28,7 @@ import java.time.LocalDateTime;
                 @Index(name="sku_index", columnList = "sku")
         }
 )
-public class Product {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +40,7 @@ public class Product {
     @Column(name="title_x")
     private String title;
 
-    private BigInteger price;
+    private BigDecimal price;
 
     private Integer quantity;
 
