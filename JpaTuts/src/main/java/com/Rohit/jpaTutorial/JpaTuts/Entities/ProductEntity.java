@@ -9,15 +9,13 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.time.LocalDateTime;
 
-@Entity
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 @Table(
         name = "products",
         uniqueConstraints = {
@@ -28,6 +26,7 @@ import java.time.LocalDateTime;
                 @Index(name="sku_index", columnList = "sku")
         }
 )
+@Entity
 public class ProductEntity {
 
     @Id

@@ -34,8 +34,8 @@ class JpaTutsApplicationTests {
 		System.out.println(savedEntity);
 
 	}
-
-	//Test to fetch all
+//
+//	//Test to fetch all
 	@Test
 	void getRepository() {
 //		List<ProductEntity> entities = productRepository.
@@ -45,7 +45,7 @@ class JpaTutsApplicationTests {
 				.findByTitleContainingIgnoreCase("choco");
 		System.out.println(entities);
 	}
-
+//
 	@Test
 	void getSingleElementRepository() {
 		Optional<ProductEntity> optionalEntity = productRepository.findById(2L); // Use Optional<ProductEntity>
