@@ -1,6 +1,8 @@
 package com.Rohit.jpaTutorial.JpaTuts.Repositories;
 
 import com.Rohit.jpaTutorial.JpaTuts.Entities.ProductEntity;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -12,9 +14,11 @@ import java.util.Optional;
 public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     List<ProductEntity>findByOrderByPriceAsc();
 
+    List<ProductEntity> findBy(Sort sort);
+
     //List<ProductEntity> findByCreatedAtAfter(LocalDateTime after);
 
-    List<ProductEntity> findByTitleContainingIgnoreCase(String title);
+    List<ProductEntity> findByTitleContainingIgnoreCase(String title, Pageable pageable);
 
     //ProductEntity findByTitleAndPrice(String title, BigDecimal price);
 
